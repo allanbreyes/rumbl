@@ -32,4 +32,4 @@ export default {
   seekTo(milliseconds) {
     return this.player.seekTo(milliseconds / 1000);
   }
-}
+};
