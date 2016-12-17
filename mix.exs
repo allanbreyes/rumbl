@@ -45,6 +45,7 @@ defmodule Rumbl.Mixfile do
       {:cowboy,               "~> 1.0"},
       {:comeonin,             "~> 2.0"},
       {:gettext,              "~> 0.11"},
+      {:mix_test_watch,       "~> 0.2",     only: :dev},
       {:phoenix_ecto,         "~> 3.0"},
       {:phoenix_html,         "~> 2.6"},
       {:phoenix_live_reload,  "~> 1.0",     only: :dev},

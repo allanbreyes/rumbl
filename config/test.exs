@@ -6,6 +6,11 @@ config :rumbl, Rumbl.Endpoint,
   http: [port: 4001],
   server: false
 
+# Relax hashing rounds to speed up test suite
+config :comeonin,
+  bcrypt_log_rounds: 4,
+  pbkdf2_rounds: 1
+
 # Print only warnings and errors during test
 config :logger, level: :warn
 
