@@ -15,7 +15,7 @@ defmodule Rumbl.TestHelpers do
 
   def insert_video(user, attrs \\ %{}) do
     changes = Dict.merge(%{
-      title: "Some Video"
+      title: "Some Video",
     }, attrs)
 
     user
