@@ -1,20 +1,12 @@
 # Rumbl
 
-To start your Phoenix app:
+## Starting the server
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
-  * Start Phoenix endpoint with `mix phoenix.server`
+* Install [Elixir](elixir-lang.org) and [Node.js](https://nodejs.org)
+* Run `bin/setup`
+* Run `bin/start`
+* Visit [`localhost:4000`](http://localhost:4000)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Running tests
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+* Run `bin/test` or `bin/test-watch`

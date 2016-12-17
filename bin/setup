@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! type mix > /dev/null; then
+    echo "Could not find 'mix'. Is Elixir installed?"
+    exit 1
+fi
+echo "== Installing Elixir dependencies =="
+mix deps.get
+
+echo "== Creating and migrating database =="
+mix ecto.create && mix ecto.migrate
+
+if ! type npm > /dev/null; then
+    echo "Could not find 'npm'. Is Node.js installed?"
+    exit 1
+fi
+echo "== Installing front-end assets =="
+npm install
