@@ -51,7 +51,8 @@ defmodule Rumbl.Mixfile do
       {:phoenix_live_reload,  "~> 1.0",     only: :dev},
       {:phoenix_pubsub,       "~> 1.0"},
       {:phoenix,              "~> 1.2.1"},
-      {:postgrex,             ">= 0.0.0"}
+      {:postgrex,             ">= 0.0.0"},
+      {:sweet_xml,            "~> 0.5.0"}
    ]
   end
 
