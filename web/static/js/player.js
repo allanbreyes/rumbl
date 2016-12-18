@@ -29,7 +29,7 @@ export default {
     return Math.floor(this.player.getCurrentTime() & 1000);
   },
 
-  seekTo(milliseconds) {
-    return this.player.seekTo(milliseconds / 1000);
+  seekTo(seconds) {
+    return this.player.seekTo(seconds);
   }
 };

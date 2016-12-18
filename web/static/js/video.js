@@ -22,17 +22,33 @@ export default {
     postButton.addEventListener('click', (_event) => {
       let payload = {body: msgInput.value, at: Player.getCurrentTime()}
       vidChannel.push('new_annotation', payload)
-                .receive('error', (err) => console.error(err));
+      .receive('error', (err) => console.error(err));
+
       msgInput.value = '';
     });
 
+    msgContainer.addEventListener('click', (event) => {
+      event.preventDefault();
+      let seconds = event.target.getAttribute('data-seek') ||
+                    event.target.parentNode.getAttribute('data-seek');
+      if (!seconds) { return; }
+      Player.seekTo(seconds);
+    });
+
     vidChannel.on('new_annotation', (resp) => {
+      vidChannel.params.last_seen_id = resp.id;
       this.renderAnnotation(msgContainer, resp);
     });
 
     vidChannel.join()
-              .receive('ok', resp => console.log('joined the video channel', resp))
-              .receive('error', reason => console.log('join failed', reason));
+    .receive('ok', (resp) => {
+      let ids = resp.annotations.map((ann) => ann.id);
+      if (ids.length > 0) {
+        vidChannel.params.last_seen_id = Math.max(...ids);
+      }
+      this.scheduleMessages(msgContainer, resp.annotations);
+    })
+    .receive('error', reason => console.log('join failed', reason));
   },
 
   escape(str) {
@@ -46,11 +62,37 @@ export default {
 
     template.innerHTML = `
       <a href="#" data-seek="${this.escape(at)}">
+        [${this.formatTime(at)}]
         <b>${this.escape(user.username)}</b>: ${this.escape(body)}
       </a>
     `;
 
     msgContainer.appendChild(template);
     msgContainer.scrollTop = msgContainer.scrollHeight;
+  },
+
+  renderAtTime(annotations, seconds, msgContainer) {
+    return annotations.filter((ann) => {
+      if (ann.at > seconds) {
+        return true;
+      } else {
+        this.renderAnnotation(msgContainer, ann);
+        return false;
+      }
+    });
+  },
+
+  scheduleMessages(msgContainer, annotations) {
+    setTimeout(() => {
+      let ctime = Player.getCurrentTime();
+      let remaining = this.renderAtTime(annotations, ctime, msgContainer);
+      this.scheduleMessages(msgContainer, remaining)
+    }, 0);
+  },
+
+  formatTime(at) {
+    let date = new Date(null);
+    date.setSeconds(at);
+    return date.toISOString().substr(14, 5);
   }
 };
