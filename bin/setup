@@ -12,6 +12,9 @@ mix deps.get
 echo "== Creating and migrating database =="
 mix ecto.create && mix ecto.migrate
 
+echo "== Seeding database =="
+mix run priv/repo/seeds.exs
+
 if ! type npm > /dev/null; then
     echo "Could not find 'npm'. Is Node.js installed?"
     exit 1
