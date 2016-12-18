@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult
+    success='true'
+    error='false'
+    numpods='6'
+    datatypes='Math'
+    timedout=''
+    timedoutpods=''
+    timing='1.1400000000000001'
+    parsetiming='0.112'
+    parsetimedout='false'
+    recalculate=''
+    id='MSPa3771hfa964i3ib05ab9000068b5d91g381i0512'
+    host='http://www4b.wolframalpha.com'
+    server='58'
+    related='http://www4b.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa3781hfa964i3ib05ab9000036e6865hh55499506023180115626929371'
+    version='2.6'>
+    <pod title='Input' scanner='Identity' id='Input' position='100' error='false' numsubpods='1'>
+        <subpod title=''>
+            <img src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3791hfa964i3ib05ab900003e37115h0695fchf?MSPStoreType=image/gif&amp;s=58' alt='1 + 1' title='1 + 1' width='32' height='18'/>
+            <plaintext>1 + 1</plaintext>
+        </subpod>
+    </pod>
+    <pod title='Result' scanner='Simplification' id='Result' position='200' error='false' numsubpods='1' primary='true'>
+        <subpod title=''>
+            <img src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3801hfa964i3ib05ab900005ab4d975h3418g1f?MSPStoreType=image/gif&amp;s=58' alt='2' title='2' width='8' height='18'/>
+            <plaintext>2</plaintext>
+        </subpod>
+        <states count='1'>
+            <state name='Step-by-step solution' input='Result__Step-by-step solution'/>
+        </states>
+    </pod>
+    <pod title='Number name' scanner='Integer' id='NumberName' position='300' error='false' numsubpods='1'>
+        <subpod title=''>
+            <img src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3811hfa964i3ib05ab900004d3cgge60h3cahe2?MSPStoreType=image/gif&amp;s=58' alt='two' title='two' width='25' height='18'/>
+            <plaintext>two</plaintext>
+        </subpod>
+    </pod>
+    <pod title='Number line' scanner='NumberLine' id='NumberLine' position='400' error='false' numsubpods='1'>
+        <subpod title=''>
+            <img src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3821hfa964i3ib05ab900005f6954f3ei82iggd?MSPStoreType=image/gif&amp;s=58' alt='' title='' width='300' height='51'/>
+            <plaintext></plaintext>
+        </subpod>
+    </pod>
+    <pod title='Manipulatives illustration' scanner='Arithmetic' id='Illustration' position='500' error='false' numsubpods='1'>
+        <subpod title=''>
+            <img src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3831hfa964i3ib05ab900004cf8a1gdg1dicbdh?MSPStoreType=image/gif&amp;s=58' alt=' | + |  |  =  |
+1 |  | 1 |  | 2' title=' | + |  |  =  |
+1 |  | 1 |  | 2' width='116' height='40'/>
+            <plaintext>
+                | + | | = | 1 | | 1 | | 2</plaintext>
+        </subpod>
+    </pod>
+    <pod title='Typical human computation times' scanner='Arithmetic' id='TypicalHumanComputationTimes' position='600' error='false' numsubpods='1'>
+        <subpod title=''>
+            <img
+                src='http://www4b.wolframalpha.com/Calculate/MSP/MSP3841hfa964i3ib05ab900006606iic450h7a12e?MSPStoreType=image/gif&amp;s=58'
+                alt='age 6:  3.2 seconds  |  age 8:  1.8 seconds  |  age 10:  1.2 seconds  |
+age 18:  0.83 seconds
+(ignoring concentration, repetition, variations in education, etc.)'
+                title='age 6:  3.2 seconds  |  age 8:  1.8 seconds  |  age 10:  1.2 seconds  |
+age 18:  0.83 seconds
+(ignoring concentration, repetition, variations in education, etc.)'
+                width='485'
+                height='59'/>
+            <plaintext>age 6: 3.2 seconds | age 8: 1.8 seconds | age 10: 1.2 seconds | age 18: 0.83 seconds (ignoring concentration, repetition, variations in education, etc.)</plaintext>
+        </subpod>
+        <states count='1'>
+            <state name='More details' input='TypicalHumanComputationTimes__More details'/>
+        </states>
+    </pod>
+    <sources count='1'>
+        <source url='http://www.wolframalpha.com/sources/HumanComputationQuerySourceInformationNotes.html' text='Human computation query'/>
+    </sources>
+</queryresult>
