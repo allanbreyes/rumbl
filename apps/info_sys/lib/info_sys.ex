@@ -1,5 +1,10 @@
-defmodule Rumbl.InfoSys do
-  @backends [Rumbl.InfoSys.Wolfram]
+defmodule InfoSys do
+  use Application
+  @backends [InfoSys.Wolfram]
+
+  def start(_type, _args) do
+    InfoSys.Supervisor.start_link()
+  end
 
   def start_link(backend, query, query_ref, owner, limit) do
     backend.start_link(query, query_ref, owner, limit)
@@ -19,7 +24,7 @@ defmodule Rumbl.InfoSys do
   defp spawn_query(backend, query, limit) do
     query_ref = make_ref()
     opts = [backend, query, query_ref, self(), limit]
-    {:ok, pid} = Supervisor.start_child(Rumbl.InfoSys.Supervisor, opts)
+    {:ok, pid} = Supervisor.start_child(InfoSys.Supervisor, opts)
     monitor_ref = Process.monitor(pid)
     {pid, monitor_ref, query_ref}
   end
